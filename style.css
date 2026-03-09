@@ -1,101 +1,175 @@
 body{
-font-family:Arial;
+font-family:Comic Sans MS;
 text-align:center;
-background:linear-gradient(#cfe8ff,#f5f7ff);
+background:#cfe8ff;
 }
+
+/* stage */
 
 .stage{
-margin-top:80px;
-height:350px;
-position:relative;
-}
-
-/* BOY */
-
-.boy{
-position:relative;
-width:80px;
-margin:auto;
-animation:sick 1s infinite;
-}
-
-.head{
-width:60px;
-height:60px;
-background:#ffd4a3;
-border-radius:50%;
-margin:auto;
-}
-
-.hair{
-width:60px;
-height:20px;
-background:#222;
-border-radius:30px 30px 0 0;
+width:800px;
+height:400px;
 margin:auto;
 position:relative;
-top:10px;
+border-radius:20px;
+overflow:hidden;
+background:#fff;
 }
 
-.body{
-width:40px;
-height:90px;
-background:#4a90e2;
-margin:auto;
-border-radius:10px;
+/* backgrounds */
+
+.room{
+background:linear-gradient(#e0f2fe,#ffffff);
 }
 
-.leg{
-width:15px;
-height:60px;
-background:#333;
+.clinic{
+background:linear-gradient(#e6ffe6,#ffffff);
+}
+
+/* characters */
+
+.character{
 position:absolute;
-top:150px;
+font-size:60px;
+top:220px;
 }
 
-.leg.left{ left:20px }
-.leg.right{ right:20px }
-
-/* SICK SHAKE */
-
-@keyframes sick{
-0%{transform:translateX(0)}
-25%{transform:translateX(-3px)}
-50%{transform:translateX(3px)}
-75%{transform:translateX(-3px)}
-100%{transform:translateX(0)}
+.bf{
+left:-120px;
 }
 
-/* BUBBLE */
-
-.bubble{
-margin-top:30px;
-font-size:20px;
-background:white;
-display:inline-block;
-padding:15px 25px;
-border-radius:15px;
-box-shadow:0 5px 10px rgba(0,0,0,0.2);
+.gf{
+right:80px;
 }
-
-/* DAY */
-
-.day{
-margin-top:20px;
-font-size:18px;
-color:#555;
-}
-
-/* FRIEND */
 
 .friend{
 position:absolute;
-right:-200px;
-top:120px;
-font-size:30px;
-transition:1s;
+top:230px;
+font-size:55px;
+opacity:0;
 }
 
-.friend.show{
+.anubhav{
+right:-150px;
+}
+
+.kunal{
+right:-150px;
+}
+
+.doctor{
 right:100px;
+opacity:0;
+}
+
+/* speech bubble */
+
+.bubble{
+position:absolute;
+top:40px;
+left:200px;
+background:white;
+padding:15px 20px;
+border-radius:20px;
+border:3px solid black;
+font-size:18px;
+max-width:350px;
+}
+
+/* day text */
+
+.day{
+position:absolute;
+bottom:10px;
+left:10px;
+font-weight:bold;
+}
+
+/* walking */
+
+.walk{
+animation:walk 2s forwards;
+}
+
+@keyframes walk{
+from{left:-120px}
+to{left:60px}
+}
+
+/* sneeze */
+
+.sneeze{
+animation:sneeze 0.3s 4;
+}
+
+@keyframes sneeze{
+0%{transform:translateX(0)}
+50%{transform:translateX(-10px)}
+100%{transform:translateX(10px)}
+}
+
+/* sneeze particles */
+
+.particle{
+position:absolute;
+font-size:20px;
+animation:fly 1s forwards;
+}
+
+@keyframes fly{
+0%{opacity:1; transform:translate(0,0)}
+100%{opacity:0; transform:translate(80px,-40px)}
+}
+
+/* anubhav slide */
+
+.slideIn{
+opacity:1;
+animation:slide 1s forwards;
+}
+
+@keyframes slide{
+from{right:-150px}
+to{right:150px}
+}
+
+/* kunal pop */
+
+.pop{
+opacity:1;
+animation:pop 0.7s;
+}
+
+@keyframes pop{
+0%{transform:scale(0)}
+100%{transform:scale(1)}
+}
+
+/* gf angry */
+
+.angry{
+animation:angry 0.3s infinite;
+}
+
+@keyframes angry{
+0%{transform:rotate(-5deg)}
+50%{transform:rotate(5deg)}
+100%{transform:rotate(-5deg)}
+}
+
+/* bf embarrassed */
+
+.embarrassed{
+transform:rotate(-10deg);
+}
+
+/* friends leave */
+
+.leave{
+animation:leave 3s forwards;
+}
+
+@keyframes leave{
+from{right:150px}
+to{right:-200px}
 }
