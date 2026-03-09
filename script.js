@@ -1,22 +1,24 @@
-let step = 0;
+let scene = 0;
 
 let story = [
-"Day 1: Boyfriend gets cold, cough and fever 🤒",
-"Girlfriend: Go to doctor!",
-"Boyfriend: Ok ok I'll go 😌",
-"Friend Anubhav: Wait bro take this medicine 💊",
-"Boyfriend: Ok I'll wait",
+"Boy: I think I have fever 🤒",
+"Girlfriend 💬: Go to doctor!",
+"Boy: No no I'll take medicine myself 💊",
 "3 days later... still sick 🤧",
-"Friend Kunal: Wait bro my sister is doctor 👩‍⚕️",
-"Boyfriend: Ok I'll wait again",
-"Girlfriend: 😑😑😑",
-"Moral of the story: Listen to girlfriend first 😂"
+"Girlfriend: GO TO DOCTOR 😑",
+"Boy: No need",
+"Day 4...",
+"Girlfriend: Now seriously go to doctor",
+"Boy: Ok I'll go",
+"Anubhav enters 😎: Wait bro take this medicine"
 ];
 
-function nextStory(){
-    step++;
+function nextScene(){
 
-    if(step < story.length){
-        document.getElementById("storyText").innerText = story[step];
-    }
+scene++;
+
+if(scene < story.length){
+document.getElementById("message").innerText = story[scene];
+}
+
 }
