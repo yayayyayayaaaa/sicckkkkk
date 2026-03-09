@@ -1,24 +1,30 @@
-let scene = 0;
+let step = 0;
 
 let story = [
-"Boy: I think I have fever 🤒",
-"Girlfriend 💬: Go to doctor!",
-"Boy: No no I'll take medicine myself 💊",
-"3 days later... still sick 🤧",
-"Girlfriend: GO TO DOCTOR 😑",
-"Boy: No need",
-"Day 4...",
-"Girlfriend: Now seriously go to doctor",
-"Boy: Ok I'll go",
-"Anubhav enters 😎: Wait bro take this medicine"
+{day:"Day 1", text:"Boy: I feel sick 🤒"},
+{day:"Day 1", text:"Girlfriend 💬: Go to doctor"},
+{day:"Day 1", text:"Boy: I'll take medicine myself 💊"},
+{day:"Day 3", text:"Still sick 🤧"},
+{day:"Day 3", text:"Girlfriend: Please go to doctor"},
+{day:"Day 3", text:"Boy: No need"},
+{day:"Day 4", text:"Girlfriend: NOW GO TO DOCTOR"},
+{day:"Day 4", text:"Boy: Ok I'll go"},
+{day:"Day 4", text:"😎 Anubhav: Wait bro take this medicine"}
 ];
 
 function nextScene(){
 
-scene++;
+step++;
 
-if(scene < story.length){
-document.getElementById("message").innerText = story[scene];
+if(step < story.length){
+
+document.getElementById("bubble").innerText = story[step].text;
+document.getElementById("day").innerText = story[step].day;
+
+if(step == 8){
+document.getElementById("anubhav").classList.add("show");
+}
+
 }
 
 }
